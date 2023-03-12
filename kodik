@@ -1,0 +1,32 @@
+import pygame
+import random
+
+pygame.init()
+SCREEN = WIDTH, HEIGHT = 300, 500
+win = pygame.display.set_mode(SCREEN, pygame.NOFRAME)
+
+CELLSIZE = 20
+ROWS = (HEIGHT-120) // CELLSIZE
+COLS = WIDTH // CELLSIZE
+
+clock = pygame.time.Clock()
+FPS = 24
+
+BLACK = (21, 24, 29)
+BLUE = (31, 25, 76)
+RED = (252, 91, 122)
+WHITE = (255, 255, 255)
+
+    running = True
+    while running:
+        win.fill(BLACK)
+        
+  	for event in pygame.event.get():
+		    if event.type == pygame.QUIT:
+			      running = False
+
+    pygame.draw.rect(win, BLUE, (0, HEIGHT - 120, WIDTH, 120))
+    pygame.draw.rect(win, BLUE, (0, 0, WIDTH, HEIGHT - 120), 2)
+    clock.tick(FPS)
+    pygame.display.update()
+pygame.quit()
